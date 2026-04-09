@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/provider/home/home_provider.dart';
-import 'package:provider/provider.dart';
-import 'screens/home_screen.dart';
+import 'package:my_app/screens/Splash/splash_screen.dart';
+import 'screens/Home/home_screen.dart';
+import 'screens/Profile/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+    );
+  }
 }
 /*
 class MyApp extends StatelessWidget {
@@ -23,22 +34,6 @@ class MyApp extends StatelessWidget {
   }
 }
 */
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
-    );
-  }
-}
 
 /*
 

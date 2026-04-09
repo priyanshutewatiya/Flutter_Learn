@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/Profile/profile_screen.dart';
+import 'package:my_app/screens/Splash/splash_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,29 +10,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  int count = 0; 
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('Counter App'),
+        backgroundColor: const Color.fromARGB(255, 226, 243, 33),
+        title: const Text('Navigation App'),
       ),
       body: Center(
-        child: Text(
-          count.toString(),
-          style: Theme.of(context).textTheme.displayLarge,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProfileScreen(),
+              ),
+            );
+          },
+          child: const Text('Go to Profile Screen'),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            count++; 
-          });
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }
@@ -121,4 +121,27 @@ Scaffold(
       ),
     );
 
+*/
+
+/*
+Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: const Text('Counter App'),
+      ),
+      body: Center(
+        child: Text(
+          count.toString(),
+          style: Theme.of(context).textTheme.displayLarge,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            count++; 
+          });
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
 */
