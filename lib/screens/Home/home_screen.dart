@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/Profile/profile_screen.dart';
-import 'package:my_app/screens/Splash/splash_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,12 +8,62 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int count = 0;
+  double height = 100;
+  double width = 100;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.cyanAccent,
+        title: Text('Implicit Animations'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            AnimatedContainer(
+              duration: Duration(seconds: 1),
+              height: height,
+              width: width,
+              color: Colors.greenAccent,
+            ),
+
+            SizedBox(height: 30),
+
+            /// ✅ Increase Size Button
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  height += 50;
+                  width += 50;
+                });
+              },
+              child: Text('Increase Size'),
+            ),
+
+            SizedBox(height: 10),
+
+            /// ✅ Reset Button
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  height = 100;
+                  width = 100;
+                });
+              },
+              child: Text('Reset'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/*
+        appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 226, 243, 33),
         title: const Text('Navigation App'),
       ),
@@ -32,9 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
           child: const Text('Go to Profile Screen'),
         ),
       ),
-    );
-  }
-}
+*/
+
 /*
 return Scaffold(
       appBar: AppBar(

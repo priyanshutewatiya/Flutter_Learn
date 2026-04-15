@@ -13,10 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }
+//debugShowCheckedModeBanner: false,
 /*
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
